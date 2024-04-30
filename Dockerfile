@@ -1,10 +1,11 @@
 FROM openjdk:17-jdk-alpine
 
-# Establece el directorio de trabajo dentro del contenedor
+# Set the working directory inside the container
 WORKDIR /app
 
-# Copia el jar construido de la aplicación al directorio de trabajo del contenedor
+# Copy the built jar of the application to the container's working directory
 COPY target/travel-paths-manager.jar travel-paths-manager.jar
 
-# Define el comando para ejecutar la aplicación cuando se inicie el contenedor
+
+# Defines the command to run the application when the container starts
 CMD ["java", "-jar", "travel-paths-manager.jar"]

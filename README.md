@@ -33,13 +33,12 @@ The API documentation is available at the /swagger-ui.html endpoint once the app
 
 ## DOCKER
 Open a terminal in the root directory of your project where the Dockerfile is located. Run the following command to build the Docker image:
-------------------------------------
+
 docker build -t optimal-travel-paths 
-------------------------------------
 
 
 Once the Docker image is successfully built, you can run the Docker container with the following command:
------------------------------------------------
+
 docker run -d -p 8080:8080 optimal-travel-paths
------------------------------------------------
+
 
