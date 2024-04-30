@@ -1,0 +1,18 @@
+server:
+  port: 8080
+
+spring:
+  webflux:
+    base-path: /
+      
+springdoc:
+   swagger-ui:
+     disable-swagger-default-url: true
+     tags-sorter: alpha
+     operations-sorter: alpha
+     doc-expansion: none
+
+logging:
+  level:
+    root: info
+    reactor.netty.http.client: debug

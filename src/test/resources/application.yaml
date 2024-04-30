@@ -1,0 +1,17 @@
+server:
+  port: 8080
+
+spring:
+  webflux:
+    taxes-path: api/v1
+
+logging.logstash:
+  enabled: true
+  url: localhost:8500
+  ignorePatterns: .*(favicon).*
+  logHeaders: true
+
+
+logging:
+  level:
+    reactor.netty.http.client: debug
