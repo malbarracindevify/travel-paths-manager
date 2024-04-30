@@ -1,15 +1,10 @@
-FROM eclipse-temurin:21-jre-alpine
+FROM openjdk:17-jdk-alpine
 
-LABEL maintainer="DevOps Forus <devops@forus.cl>"
+# Establece el directorio de trabajo dentro del contenedor
+WORKDIR /app
 
-RUN apk update && apk add tzdata && apk upgrade
+# Copia el jar construido de la aplicación al directorio de trabajo del contenedor
+COPY target/travel-paths-manager.jar travel-paths-manager.jar
 
-RUN cp /usr/share/zoneinfo/America/Santiago /etc/localtime
-RUN echo "America/Santiago" > /etc/timezone
-RUN date
-
-ARG JAR_FILE=target/*.jar
-
-ADD ${JAR_FILE} app.jar
-
-ENTRYPOINT ["java","-XX:MaxRAMPercentage=75","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
+# Define el comando para ejecutar la aplicación cuando se inicie el contenedor
+CMD ["java", "-jar", "travel-paths-manager.jar"]
