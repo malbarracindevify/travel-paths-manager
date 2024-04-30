@@ -1,15 +1,17 @@
-# Optimal Travel Paths
+# Travel Paths Manager
 
-This project is a RESTful web service for travel optimization, allowing storing information about stations and paths and finding the optimal path between two stations while minimizing costs.
+RESTful web service that stores road and station information for trip optimization.
 
 ## Requirements
 
-- Java 11 o superior
-- Docker (opcional, para ejecutar la aplicación en un contenedor)
+- Java 17
+- Maven 3
+- Docker
+
 
 ## Configuration
 
-No special configuration is required. The project is set up to run with default settings.
+does not require
 
 ## Compilation
 
@@ -19,7 +21,8 @@ This will compile the project and generate an executable JAR file in the target 
 
 
 ## Usage
-Una vez que la aplicación esté en funcionamiento, puedes acceder a los siguientes endpoints RESTful:
+
+RESTful endpoints:
 
 - `PUT /stations/$station_id`: Add a new station.
 - `PUT /path`: Add a new path. Body: { "cost":double, "source_id":long, "destination_id":long }
@@ -29,7 +32,6 @@ For more details on how to interact with these endpoints, refer to the API docum
 
 ## API Documentation
 The API documentation is available at the /swagger-ui.html endpoint once the application is running.
-
 
 ## DOCKER
 Open a terminal in the root directory of your project where the Dockerfile is located. Run the following command to build the Docker image:
